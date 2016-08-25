@@ -1,4 +1,4 @@
-package sample.contentful.simplelistview;
+package sample.contentful.simplerecyclerview;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;

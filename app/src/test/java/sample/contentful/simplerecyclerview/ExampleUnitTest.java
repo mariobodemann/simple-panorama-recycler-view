@@ -1,4 +1,4 @@
-package sample.contentful.simplelistview;
+package sample.contentful.simplerecyclerview;
 
 import org.junit.Test;
 
