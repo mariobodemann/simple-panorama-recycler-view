@@ -11,13 +11,6 @@ import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity {
 
-  public static final class ListItemViewHolder extends RecyclerView.ViewHolder {
-    public ListItemViewHolder(View itemView) {
-      super(itemView);
-
-    }
-  }
-
   @BindView(R.id.main_recycler)
   public RecyclerView recyclerView;
 
