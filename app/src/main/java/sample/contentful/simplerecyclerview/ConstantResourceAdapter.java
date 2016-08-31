@@ -28,12 +28,14 @@ public class ConstantResourceAdapter extends RecyclerView.Adapter {
   }
 
   @Override public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-    final View inflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.resource_layout, parent, false);
+    final LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
+    final View inflate = layoutInflater.inflate(R.layout.resource_layout, parent, false);
     return new ResourceItemViewHolder(inflate);
   }
 
-  @Override public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
-    ((ResourceItemViewHolder) holder).textView.setText(elements.get(position));
+  @Override public void onBindViewHolder(RecyclerView.ViewHolder baseHolder, int position) {
+    final ResourceItemViewHolder viewHolder = (ResourceItemViewHolder) baseHolder;
+    viewHolder.textView.setText(elements.get(position));
   }
 
   @Override public int getItemCount() {
