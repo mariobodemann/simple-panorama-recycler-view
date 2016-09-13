@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Simple Recycler View</string>
+    <string name="disclaimer">Images are taken from <a href="https://github.com/google/vrview">https://github.com/google/vrview</a></string>
 </resources>
