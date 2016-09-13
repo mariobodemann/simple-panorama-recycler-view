@@ -1,21 +1,25 @@
 package sample.contentful.simplerecyclerview;
 
+import android.content.res.Resources;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
+
+import com.google.vr.sdk.widgets.pano.VrPanoramaView;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class ConstantResourceAdapter extends RecyclerView.Adapter {
   public static final class ResourceItemViewHolder extends RecyclerView.ViewHolder {
-    private final TextView textView;
+    private final VrPanoramaView vrPanoramaView;
 
     public ResourceItemViewHolder(View itemView) {
       super(itemView);
-      textView = (TextView) itemView;
+      vrPanoramaView = (VrPanoramaView) itemView;
     }
   }
 
@@ -36,7 +40,9 @@ public class ConstantResourceAdapter extends RecyclerView.Adapter {
 
   @Override public void onBindViewHolder(RecyclerView.ViewHolder baseHolder, int position) {
     final ResourceItemViewHolder viewHolder = (ResourceItemViewHolder) baseHolder;
-    viewHolder.textView.setText(elements.get(position));
+    final Resources resources = viewHolder.vrPanoramaView.getResources();
+    final Bitmap bitmap = BitmapFactory.decodeResource(resources, elements.get(position));
+    viewHolder.vrPanoramaView.loadImageFromBitmap(bitmap, null);
   }
 
   @Override public int getItemCount() {
